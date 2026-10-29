@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Northgate backend",
+      "type": "shell",
+      "command": "python",
+      "args": ["server.py"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "northgate",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Starting Northgate server on ",
+          "endsPattern": "^Northgate local app running at http://"
+        }
+      }
+    }
+  ]
+}

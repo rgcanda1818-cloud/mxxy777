@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Northgate cart — review your selected items and complete your order."
+    />
+    <title>Northgate | Your Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=6" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-panel">
+          <div class="logo-wrap">
+            <a href="index.html" class="logo">Northgate</a>
+          </div>
+        </div>
+
+        <button class="location-block location-trigger" type="button" aria-haspopup="dialog" aria-controls="location-modal">
+          <span>Deliver to</span>
+          <strong class="delivery-location-label">Philippines</strong>
+        </button>
+
+        <label class="search-bar" aria-label="Search products">
+          <span>All</span>
+          <input type="text" placeholder="Search Northgate" />
+          <button type="button">🔍</button>
+        </label>
+
+        <div class="header-actions secondary-actions">
+          <button class="mini-link account-link account-trigger" type="button" aria-haspopup="dialog" aria-controls="auth-modal">
+            <span class="account-avatar" aria-hidden="true" hidden>
+              <img class="account-avatar-photo" alt="" hidden />
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" /><path d="M4.8 20c.6-3.7 3.3-5.7 7.2-5.7s6.6 2 7.2 5.7" /></svg>
+            </span>
+            <span class="account-copy"><small>Hello, <span class="account-greeting">sign in</span></small><strong>Account &amp; Lists</strong></span>
+          </button>
+          <button class="mini-link orders-trigger" type="button" aria-haspopup="dialog" aria-controls="auth-modal">
+            <small>Returns</small>
+            <strong>&amp; Orders</strong>
+          </button>
+          <a class="cart-box" href="cart.html" aria-label="View cart">
+            <span class="cart-icon">🛒</span>
+            <strong>Cart</strong>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+      <nav class="nav-strip">
+        <div class="container nav-inner">
+          <a href="index.html">All</a>
+          <a href="index.html#todays-deals">Today's Deals</a>
+          <a href="#" data-support-open>Support</a>
+          <a href="index.html#new-arrivals">New Arrivals</a>
+          <a href="#">Gift Cards</a>
+          <a href="#">Sell</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="cart-page-shell">
+      <div class="container cart-layout">
+        <section class="cart-main">
+          <div class="cart-panel">
+            <div class="cart-header-row">
+              <div>
+                <p class="eyebrow">Your cart</p>
+                <h1>Shopping cart</h1>
+              </div>
+              <span class="item-total" id="cart-item-count">0 items</span>
+            </div>
+
+            <div id="cart-items" class="cart-items"></div>
+          </div>
+        </section>
+
+        <aside class="summary-panel">
+          <div class="summary-box">
+            <p class="summary-label">Order summary</p>
+            <div class="summary-row">
+              <span>Items</span>
+              <strong id="summary-items">0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="summary-subtotal">$0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong id="summary-shipping">$0.00</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="summary-total">$0.00</strong>
+            </div>
+            <button class="primary-btn full-width" id="checkout-open" type="button" disabled aria-disabled="true" title="Add an item to your cart to enable checkout">Proceed to checkout</button>
+            <button class="secondary-btn full-width" type="button" onclick="window.location.href='index.html#catalog'">Continue shopping</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>About Us</h3>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+          <a href="#">About Northgate</a>
+        </div>
+        <div>
+          <h3>Make Money with Us</h3>
+          <a href="#">Sell products</a>
+          <a href="#">Affiliate program</a>
+          <a href="#">Advertise</a>
+        </div>
+        <div>
+          <h3>Customer Service</h3>
+          <a href="#" data-support-open data-support-topic="help">Help center</a>
+          <a href="#" data-support-open data-support-topic="returns">Returns</a>
+          <a href="#" data-support-open data-support-topic="contact">Contact us</a>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>© <span id="year"></span> Northgate. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="modal-backdrop" id="confirm-modal" aria-hidden="true">
+      <div class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <div class="confirm-icon">!</div>
+        <h2 id="confirm-title">Remove item?</h2>
+        <p id="confirm-message">Are you sure you want to remove this item from your cart?</p>
+        <div class="confirm-actions">
+          <button type="button" class="confirm-cancel" id="cancel-remove">Cancel</button>
+          <button type="button" class="confirm-delete" id="confirm-remove">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop location-backdrop" id="location-modal" aria-hidden="true">
+      <section class="location-dialog" role="dialog" aria-modal="true" aria-labelledby="location-title">
+        <header class="location-dialog-header">
+          <h2 id="location-title">Choose your location</h2>
+          <button class="location-close" type="button" aria-label="Close location dialog">×</button>
+        </header>
+        <div class="location-dialog-content">
+          <p class="location-description">Delivery options and delivery speeds may vary for different locations.</p>
+          <button class="location-signin" id="location-signin" type="button">Sign in to see your addresses</button>
+          <div class="location-divider"><span>or enter a US ZIP code</span></div>
+          <div class="location-zip-row">
+            <label class="visually-hidden" for="location-zip">US ZIP code</label>
+            <input id="location-zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="ZIP code" />
+            <button class="location-apply" id="location-apply" type="button">Apply</button>
+          </div>
+          <p class="location-status" id="location-status" role="status" aria-live="polite"></p>
+          <div class="location-divider"><span>or ship outside the US</span></div>
+          <label class="visually-hidden" for="delivery-country">Ship to country or region</label>
+          <select id="delivery-country" autocomplete="country-name"></select>
+          <div class="location-dialog-actions">
+            <button class="location-done" id="location-done" type="button">Done</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop checkout-backdrop" id="checkout-modal" aria-hidden="true">
+      <section class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+        <div class="checkout-main">
+          <button class="checkout-close" type="button" aria-label="Close checkout">×</button>
+          <p class="eyebrow">NORTHGATE CHECKOUT</p>
+          <h2 id="checkout-title">Where should we send it?</h2>
+          <p class="checkout-intro">Add your contact and delivery details to continue.</p>
+          <form id="checkout-form">
+            <div class="checkout-fields">
+              <div class="checkout-field checkout-field-wide">
+                <label for="checkout-name">Full name</label>
+                <input id="checkout-name" name="name" autocomplete="name" placeholder="Name on delivery" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-email">Email address</label>
+                <input id="checkout-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-phone">Phone number</label>
+                <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" placeholder="+63" required />
+              </div>
+              <div class="checkout-field checkout-field-wide">
+                <label for="checkout-address">Street address</label>
+                <input id="checkout-address" name="address" autocomplete="street-address" placeholder="House number and street" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-city">City</label>
+                <input id="checkout-city" name="city" autocomplete="address-level2" required />
+              </div>
+              <div class="checkout-field">
+                <label for="checkout-postal">Postal code</label>
+                <input id="checkout-postal" name="postal" autocomplete="postal-code" required />
+              </div>
+              <div class="checkout-field checkout-field-wide">
+                <label for="checkout-payment">Payment method</label>
+                <select id="checkout-payment" name="payment" required>
+                  <option value="" selected disabled>Select a demo payment method</option>
+                  <option value="cod">Cash on delivery (demo)</option>
+                  <option value="transfer">Bank transfer (demo)</option>
+                </select>
+              </div>
+            </div>
+            <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
+            <button class="primary-btn checkout-submit" type="submit">Place order</button>
+          </form>
+          <section id="checkout-confirmation" class="checkout-confirmation" aria-live="polite" hidden>
+            <span class="checkout-confirmation-icon" aria-hidden="true">✓</span>
+            <h2>Order placed</h2>
+            <p>Demo order <strong id="checkout-order-id"></strong> is saved in My Purchases.</p>
+            <a class="primary-btn" href="account.html?view=purchases">View my purchases</a>
+            <p class="checkout-confirmation-note">No payment was processed and nothing was sent to a seller.</p>
+          </section>
+          <p class="checkout-demo-note">Demo orders are saved to your account on this server. No payment is processed.</p>
+        </div>
+        <aside class="checkout-summary">
+          <span class="checkout-summary-kicker">YOUR ORDER</span>
+          <h3>Order summary</h3>
+          <div class="checkout-preview" id="checkout-preview" aria-live="polite"></div>
+          <div><span>Items</span><strong id="checkout-items">0</strong></div>
+          <div><span>Subtotal</span><strong id="checkout-subtotal">$0.00</strong></div>
+          <div><span>Shipping</span><strong id="checkout-shipping">$0.00</strong></div>
+          <div class="checkout-total"><span>Total</span><strong id="checkout-total">$0.00</strong></div>
+          <p id="checkout-summary-note">Shipping and totals are based on the items currently in your cart.</p>
+        </aside>
+      </section>
+    </div>
+
+      <div class="modal-backdrop login-backdrop" id="auth-modal" aria-hidden="true">
+        <section class="login-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+          <aside class="login-side">
+            <a class="login-brand" href="index.html" aria-label="Northgate home">
+              <span class="login-emblem" aria-hidden="true">✦</span>
+              <span>Northgate</span>
+            </a>
+            <div class="login-side-copy">
+              <p>MEMBER ACCESS</p>
+              <h2>Good to see<br />you again.</h2>
+            </div>
+            <span class="login-side-star" aria-hidden="true">✦</span>
+          </aside>
+          <div class="login-main">
+            <button class="login-close" id="auth-close" type="button" aria-label="Close sign-in dialog">×</button>
+            <p class="login-eyebrow">YOUR NORTHGATE ACCOUNT</p>
+            <h1 id="auth-title">Sign in to Northgate</h1>
+            <p class="login-intro">One account for your orders and saved picks.</p>
+            <form id="auth-form" class="auth-form">
+              <div class="login-extra-field" id="auth-name-field" hidden>
+                <label for="auth-name">Your name</label>
+                <input id="auth-name" name="name" type="text" autocomplete="name" placeholder="Enter your name" />
+              </div>
+              <label for="auth-email">Email address</label>
+              <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              <label for="auth-password">Password</label>
+              <input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required />
+              <div class="login-password-fields" id="auth-confirm-field" hidden>
+                <label for="auth-password-confirm">Confirm password</label>
+                <input id="auth-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" placeholder="Enter your password again" minlength="8" />
+              </div>
+              <div class="login-extra-field" id="auth-otp-field" hidden>
+                <label for="auth-otp">Email verification code</label>
+                <input id="auth-otp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter the 6-digit code" />
+                <button class="login-mode-toggle" id="auth-resend-code" type="button">Resend code</button>
+              </div>
+              <button class="login-submit" type="submit">
+                <span class="login-submit-text">Sign in</span>
+                <span class="login-submit-icon" aria-hidden="true">→</span>
+              </button>
+              <p class="login-status" id="auth-status" role="status" aria-live="polite"></p>
+              <button class="login-mode-toggle" id="auth-mode-toggle" type="button">Create an account</button>
+            </form>
+            <p class="login-demo-note">GitHub Pages sign-up sends a Firebase verification link; local sign-up uses a one-time code.</p>
+          </div>
+        </section>
+      </div>
+      <script src="firebase-config.js"></script>
+      <script type="module" src="firebase-auth.js?v=3"></script>
+      <script src="script.js?v=28"></script>
+  </body>
+</html>

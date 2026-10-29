@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Northgate is a modern ecommerce storefront with deals, featured products, and fast online shopping."
+    />
+    <title>Northgate | Shop Smart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=16" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-panel">
+          <div class="logo-wrap">
+            <div class="logo">Northgate</div>
+          </div>
+        </div>
+
+        <button class="location-block location-trigger" type="button" aria-haspopup="dialog" aria-controls="location-modal">
+          <span>Deliver to</span>
+          <strong class="delivery-location-label">Philippines</strong>
+        </button>
+
+        <label class="search-bar" aria-label="Search products">
+          <span>All</span>
+          <input type="text" placeholder="Search Northgate" />
+          <button type="button">🔍</button>
+        </label>
+
+        <div class="header-actions secondary-actions">
+          <button class="mini-link account-link account-trigger" type="button" aria-haspopup="dialog" aria-controls="auth-modal">
+            <span class="account-avatar" aria-hidden="true" hidden>
+              <img class="account-avatar-photo" alt="" hidden />
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" /><path d="M4.8 20c.6-3.7 3.3-5.7 7.2-5.7s6.6 2 7.2 5.7" /></svg>
+            </span>
+            <span class="account-copy"><small>Hello, <span class="account-greeting">sign in</span></small><strong>Account &amp; Lists</strong></span>
+          </button>
+          <a class="mini-link seller-account-link" href="seller-register.html">
+            <small>Want to sell?</small>
+            <strong>Create seller account</strong>
+          </a>
+          <button class="mini-link orders-trigger" type="button" aria-haspopup="dialog" aria-controls="auth-modal">
+            <small>Returns</small>
+            <strong>&amp; Orders</strong>
+          </button>
+          <a class="cart-box" href="cart.html" aria-label="View cart">
+            <span class="cart-icon">🛒</span>
+            <strong>Cart</strong>
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+      <nav class="nav-strip">
+        <div class="container nav-inner">
+          <a href="#catalog">All</a>
+          <a href="#todays-deals">Today's Deals</a>
+          <a href="#" data-support-open>Support</a>
+          <a href="#new-arrivals">New Arrivals</a>
+          <a href="#catalog">Gift Cards</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-banner">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="hero-tag">Limited time deal</span>
+            <h1>Smart tech. Everyday savings.</h1>
+            <p>
+              Upgrade your home, work, and lifestyle with the best gadgets, smart
+              essentials, and everyday upgrades at everyday prices.
+            </p>
+            <a class="primary-btn" href="#products">Shop now</a>
+          </div>
+          <div class="hero-card">
+            <div class="deal-badge">Deal of the day</div>
+            <img
+              src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+              alt="Featured product"
+            />
+            <div class="deal-meta">
+              <div>
+                <span>New</span>
+                <strong>Noise Cancelling Headphones</strong>
+              </div>
+              <div class="deal-price">
+                <span class="old-price">$189.99</span>
+                <strong>$129.99</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories">
+        <div class="container">
+          <div class="category-row" aria-label="Shop by category">
+            <button type="button" data-category-filter="all" aria-pressed="true">All categories</button>
+            <button type="button" data-category-filter="home essentials" aria-pressed="false">Home essentials</button>
+            <button type="button" data-category-filter="electronics" aria-pressed="false">Electronics</button>
+            <button type="button" data-category-filter="fashion" aria-pressed="false">Fashion</button>
+            <button type="button" data-category-filter="beauty" aria-pressed="false">Beauty</button>
+            <button type="button" data-category-filter="kitchen" aria-pressed="false">Kitchen</button>
+            <button type="button" data-category-filter="office" aria-pressed="false">Office</button>
+            <button type="button" data-category-filter="fitness" aria-pressed="false">Fitness</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="products">
+        <div class="container">
+          <div class="section-head">
+            <h2>Popular picks for you</h2>
+            <a href="#todays-deals">See all deals</a>
+          </div>
+
+          <div class="product-grid" id="featured-products">
+            <article class="product-card" data-category="electronics">
+              <div class="product-badge">Best Seller</div>
+              <a class="product-image-link" href="product.html?id=wireless-earbuds-pro"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=700&q=80" alt="Wireless earbuds" /></a>
+              <div class="product-info">
+                <h3><a class="product-detail-link" href="product.html?id=wireless-earbuds-pro">Wireless Earbuds Pro</a></h3>
+                <div class="rating">★★★★★ <span>4.7</span></div>
+                <div class="price-row">
+                  <span class="price">$79.99</span>
+                  <span class="prime-tag">Prime</span>
+                </div>
+                <button class="add-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="electronics">
+              <div class="product-badge">Trending</div>
+              <a class="product-image-link" href="product.html?id=smartwatch-max"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Smartwatch" /></a>
+              <div class="product-info">
+                <h3><a class="product-detail-link" href="product.html?id=smartwatch-max">SmartWatch Max</a></h3>
+                <div class="rating">★★★★★ <span>4.8</span></div>
+                <div class="price-row">
+                  <span class="price">$149.00</span>
+                  <span class="prime-tag">Prime</span>
+                </div>
+                <button class="add-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="electronics">
+              <div class="product-badge">Hot deal</div>
+              <a class="product-image-link" href="product.html?id=modern-laptop-air-13"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=700&q=80" alt="Laptop" /></a>
+              <div class="product-info">
+                <h3><a class="product-detail-link" href="product.html?id=modern-laptop-air-13">Modern Laptop Air 13</a></h3>
+                <div class="rating">★★★★★ <span>4.9</span></div>
+                <div class="price-row">
+                  <span class="price">$899.99</span>
+                  <span class="prime-tag">Prime</span>
+                </div>
+                <button class="add-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="home essentials">
+              <div class="product-badge">New</div>
+              <a class="product-image-link" href="product.html?id=desk-air-purifier"><img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80" alt="Desk fan" /></a>
+              <div class="product-info">
+                <h3><a class="product-detail-link" href="product.html?id=desk-air-purifier">Desk Air Purifier</a></h3>
+                <div class="rating">★★★★★ <span>4.6</span></div>
+                <div class="price-row">
+                  <span class="price">$64.99</span>
+                  <span class="prime-tag">Prime</span>
+                </div>
+                <button class="add-cart" type="button">Add to cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="todays-deals">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="catalog-category">LIMITED-TIME PRICES</p>
+              <h2>Today's deals</h2>
+            </div>
+            <span id="deal-product-count">8 offers</span>
+          </div>
+          <div class="product-grid" id="deal-products" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="products" id="new-arrivals">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="catalog-category">JUST LANDED</p>
+              <h2>New arrivals</h2>
+            </div>
+            <span id="new-arrival-count">10 fresh finds</span>
+          </div>
+          <div class="product-grid" id="new-arrivals-products" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="deal-section">
+        <div class="container deal-banner">
+          <div>
+            <span class="deal-label">Refresh your space</span>
+            <h2>Home upgrades under $120</h2>
+            <p>From lighting to daily essentials, discover value-packed upgrades.</p>
+          </div>
+          <a class="primary-btn" href="#todays-deals">Explore deals</a>
+        </div>
+      </section>
+
+      <section class="products second-row" id="catalog">
+        <div class="container">
+          <div class="section-head">
+            <h2>Explore the catalog</h2>
+            <span id="catalog-result-count" aria-live="polite">14 products</span>
+          </div>
+
+          <div class="catalog-toolbar">
+            <p class="catalog-empty" id="catalog-empty" hidden>No products match your search. Try a different name or category.</p>
+            <label class="catalog-sort" for="catalog-sort">
+              <span>Sort by</span>
+              <select id="catalog-sort" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to high</option>
+                <option value="price-desc">Price: High to low</option>
+                <option value="name-asc">Name: A–Z</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="product-grid compact" id="catalog-products" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>About Us</h3>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+          <a href="#">About Northgate</a>
+        </div>
+        <div>
+          <h3>Make Money with Us</h3>
+          <a href="admin-login.html">Admin sign in</a>
+          <a href="#">Affiliate program</a>
+          <a href="#">Advertise</a>
+        </div>
+        <div>
+          <h3>Customer Service</h3>
+          <a href="#" data-support-open data-support-topic="help">Help center</a>
+          <a href="#" data-support-open data-support-topic="returns">Returns</a>
+          <a href="#" data-support-open data-support-topic="contact">Contact us</a>
+        </div>
+      </div>
+      <div class="container copyright">
+        <p>© <span id="year"></span> Northgate. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast">Added to cart</div>
+
+    <div class="modal-backdrop location-backdrop" id="location-modal" aria-hidden="true">
+      <section class="location-dialog" role="dialog" aria-modal="true" aria-labelledby="location-title">
+        <header class="location-dialog-header">
+          <h2 id="location-title">Choose your location</h2>
+          <button class="location-close" type="button" aria-label="Close location dialog">×</button>
+        </header>
+        <div class="location-dialog-content">
+          <p class="location-description">Delivery options and delivery speeds may vary for different locations.</p>
+          <button class="location-signin" id="location-signin" type="button">Sign in to see your addresses</button>
+          <div class="location-divider"><span>or enter a US ZIP code</span></div>
+          <div class="location-zip-row">
+            <label class="visually-hidden" for="location-zip">US ZIP code</label>
+            <input id="location-zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" placeholder="ZIP code" />
+            <button class="location-apply" id="location-apply" type="button">Apply</button>
+          </div>
+          <p class="location-status" id="location-status" role="status" aria-live="polite"></p>
+          <div class="location-divider"><span>or ship outside the US</span></div>
+          <label class="visually-hidden" for="delivery-country">Ship to country or region</label>
+          <select id="delivery-country" autocomplete="country-name"></select>
+          <div class="location-dialog-actions">
+            <button class="location-done" id="location-done" type="button">Done</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop variant-backdrop" id="variant-modal" aria-hidden="true">
+      <section class="variant-dialog" role="dialog" aria-modal="true" aria-labelledby="variant-modal-title">
+        <header class="variant-dialog-header">
+          <div>
+            <p>CHOOSE OPTIONS</p>
+            <h2 id="variant-modal-title">Choose an option</h2>
+          </div>
+          <button class="variant-modal-close" type="button" aria-label="Close options dialog">×</button>
+        </header>
+        <div class="variant-dialog-content">
+          <label for="variant-modal-select">Size or color</label>
+          <select id="variant-modal-select">
+            <option value="">Select an option</option>
+          </select>
+          <p class="variant-modal-status" id="variant-modal-status" role="status" aria-live="polite"></p>
+          <button class="variant-modal-add" id="variant-modal-add" type="button">Add to cart</button>
+        </div>
+      </section>
+    </div>
+
+      <div class="modal-backdrop login-backdrop" id="auth-modal" aria-hidden="true">
+        <section class="login-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+          <aside class="login-side">
+            <a class="login-brand" href="index.html" aria-label="Northgate home">
+              <span class="login-emblem" aria-hidden="true">✦</span>
+              <span>Northgate</span>
+            </a>
+            <div class="login-side-copy">
+              <p>MEMBER ACCESS</p>
+              <h2>Good to see<br />you again.</h2>
+            </div>
+            <span class="login-side-star" aria-hidden="true">✦</span>
+          </aside>
+          <div class="login-main">
+            <button class="login-close" id="auth-close" type="button" aria-label="Close sign-in dialog">×</button>
+            <p class="login-eyebrow">YOUR NORTHGATE ACCOUNT</p>
+            <h1 id="auth-title">Sign in to Northgate</h1>
+            <p class="login-intro">One account for your orders and saved picks.</p>
+            <form id="auth-form" class="auth-form">
+              <div class="login-extra-field" id="auth-name-field" hidden>
+                <label for="auth-name">Your name</label>
+                <input id="auth-name" name="name" type="text" autocomplete="name" placeholder="Enter your name" />
+              </div>
+              <label for="auth-email">Email address</label>
+              <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              <div id="auth-password-fields">
+                <label for="auth-password">Password</label>
+                <input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required />
+                <div class="login-password-fields" id="auth-confirm-field" hidden>
+                  <label for="auth-password-confirm">Confirm password</label>
+                  <input id="auth-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" placeholder="Enter your password again" minlength="8" />
+                </div>
+              </div>
+              <div class="login-extra-field" id="auth-otp-field" hidden>
+                <label for="auth-otp">Email verification code</label>
+                <input id="auth-otp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter the 6-digit code" />
+                <button class="login-mode-toggle" id="auth-resend-code" type="button">Resend code</button>
+              </div>
+              <button class="login-submit" type="submit">
+                <span class="login-submit-text">Sign in</span>
+                <span class="login-submit-icon" aria-hidden="true">→</span>
+              </button>
+              <p class="login-status" id="auth-status" role="status" aria-live="polite"></p>
+              <button class="login-mode-toggle" id="auth-mode-toggle" type="button">Create an account</button>
+            </form>
+            <p class="login-demo-note">GitHub Pages sign-up sends a Firebase verification link; local sign-up uses a one-time code.</p>
+          </div>
+        </section>
+      </div>
+      <script src="firebase-config.js"></script>
+      <script type="module" src="firebase-auth.js?v=3"></script>
+      <script src="script.js?v=28"></script>
+  </body>
+</html>

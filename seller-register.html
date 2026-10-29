@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Northgate | Create seller account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=6" />
+  </head>
+  <body data-login-role="seller">
+    <main class="modal-backdrop login-backdrop show">
+      <section class="login-dialog" aria-labelledby="role-login-title">
+        <aside class="login-side">
+          <a class="login-brand" href="index.html"><span class="login-emblem" aria-hidden="true">✦</span>Northgate</a>
+          <div class="login-side-copy">
+            <p>SELLER ACCESS</p>
+            <h2>Bring your shop to Northgate.</h2>
+          </div>
+          <span class="login-side-star" aria-hidden="true">✦</span>
+        </aside>
+        <div class="login-main">
+          <p class="login-eyebrow">NORTHGATE SELLER</p>
+          <h1 id="role-login-title">Create your seller account</h1>
+          <p class="login-intro">Create an account to list and manage your own products.</p>
+          <form id="seller-register-form" class="auth-form">
+            <label for="seller-register-name">Your name</label>
+            <input id="seller-register-name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="Enter your name" required />
+            <label for="seller-register-email">Email address</label>
+            <input id="seller-register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <label for="seller-register-password">Password</label>
+            <input id="seller-register-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required />
+            <label for="seller-register-confirm-password">Confirm password</label>
+            <input id="seller-register-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Enter your password again" required />
+            <button class="login-submit" type="submit">
+              <span class="login-submit-text">Create seller account</span>
+              <span class="login-submit-icon" aria-hidden="true">→</span>
+            </button>
+          </form>
+          <form id="seller-verify-form" class="auth-form" hidden>
+            <label for="seller-verify-email">Email address</label>
+            <input id="seller-verify-email" name="email" type="email" autocomplete="email" readonly required />
+            <label for="seller-verify-code">6-digit verification code</label>
+            <input id="seller-verify-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter the code from your email" required />
+            <button class="login-submit" type="submit">
+              <span class="login-submit-text">Verify email</span>
+              <span class="login-submit-icon" aria-hidden="true">→</span>
+            </button>
+            <button class="login-mode-toggle" id="seller-resend-code" type="button">Resend code</button>
+          </form>
+          <p id="role-login-status" class="login-status" role="status" aria-live="polite"></p>
+          <p class="login-demo-note">Already have a seller account? <a href="seller-login.html">Sign in</a>.</p>
+          <p class="login-demo-note"><a href="index.html">Return to the shop</a></p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js?v=12"></script>
+  </body>
+</html>

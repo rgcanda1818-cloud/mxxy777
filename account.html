@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northgate | My Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=16" />
+  </head>
+  <body class="account-page-body">
+    <div class="account-page-shell">
+      <aside class="account-page-sidebar">
+        <div class="account-page-user">
+          <div id="account-avatar-sidebar" class="account-page-avatar">
+            <img class="account-avatar-image" alt="" hidden />
+            <span class="account-avatar-initial">R</span>
+          </div>
+          <div class="account-page-user-meta">
+            <strong id="account-user-name">rgcanda</strong>
+            <small>Edit Profile</small>
+          </div>
+        </div>
+
+        <nav class="account-page-nav" aria-label="Account pages">
+          <button type="button" class="active" data-account-view="profile">My Account</button>
+          <button type="button" class="subtle" data-account-view="profile">Profile</button>
+          <button type="button" class="subtle" data-account-view="payment-methods">Banks &amp; Cards</button>
+          <button type="button" class="subtle" data-account-view="addresses">Addresses</button>
+          <button type="button" class="subtle" data-account-view="password">Change Password</button>
+          <button type="button" class="subtle" data-account-view="privacy">Privacy Settings</button>
+          <button type="button" class="subtle" data-account-view="notification-settings">Notification Settings</button>
+          <button type="button" class="subtle" data-account-view="order-settings">Order Settings</button>
+          <button type="button" class="subtle" data-account-view="purchases">My Purchase</button>
+          <button type="button" class="subtle" data-account-view="notifications">Notifications</button>
+          <button type="button" class="subtle" data-account-view="vouchers">My Vouchers</button>
+          <button type="button" class="subtle" data-account-view="coins">My Northgate Coins</button>
+          <a id="account-admin-link" href="admin.html" hidden>Store management</a>
+        </nav>
+      </aside>
+
+      <main class="account-page-main">
+        <header class="account-page-header">
+          <div>
+            <h1 id="account-page-title">My Profile</h1>
+            <p id="account-page-subtitle">Manage and protect your account</p>
+          </div>
+          <button id="account-signout" class="account-signout-btn" type="button">Sign out</button>
+        </header>
+
+        <form id="account-profile-form" class="account-profile-form" novalidate>
+          <div class="account-profile-fields">
+            <div class="account-field-row">
+              <label for="account-username">Username</label>
+              <input id="account-username" name="username" type="text" value="rgcanda" maxlength="32" required />
+              <div class="account-username-note">Username can only be changed once.</div>
+            </div>
+
+            <div class="account-field-row">
+              <label for="account-name">Name</label>
+              <input id="account-name" name="name" type="text" value="rg" maxlength="80" required />
+            </div>
+
+            <div class="account-field-row">
+              <label for="account-email">Email</label>
+              <div class="account-email-row">
+                <input id="account-email" name="email" type="email" value="rgcanda777@gmail.com" required />
+                <button id="account-email-edit" type="button">Change</button>
+              </div>
+            </div>
+
+            <div class="account-field-row">
+              <label for="account-phone">Phone Number</label>
+              <input id="account-phone" name="phone" type="tel" placeholder="Add" autocomplete="tel" />
+            </div>
+
+            <div class="account-field-row">
+              <label>Gender</label>
+              <div class="account-gender-row">
+                <label><input type="radio" name="gender" value="male" checked /> Male</label>
+                <label><input type="radio" name="gender" value="female" /> Female</label>
+                <label><input type="radio" name="gender" value="other" /> Other</label>
+              </div>
+            </div>
+
+            <div class="account-field-row">
+              <label>Date of birth</label>
+              <div class="account-date-row">
+                <select id="account-day" name="day">
+                  <option value="">Date</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                  <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                  <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+                  <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+                  <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+                  <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+                  <option>31</option>
+                </select>
+                <select id="account-month" name="month">
+                  <option value="">Month</option>
+                  <option>January</option><option>February</option><option>March</option><option>April</option>
+                  <option>May</option><option>June</option><option>July</option><option>August</option>
+                  <option>September</option><option>October</option><option>November</option><option>December</option>
+                </select>
+                <select id="account-year" name="year">
+                  <option value="">Year</option>
+                  <option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option>
+                  <option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option>
+                  <option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option>
+                  <option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option>
+                  <option>2005</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="account-save-btn" type="submit">Save</button>
+            <p id="account-profile-status" class="account-profile-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <aside class="account-side-panel">
+            <div id="account-main-avatar" class="account-main-avatar">
+              <img class="account-avatar-image" alt="" hidden />
+              <span class="account-avatar-initial">R</span>
+            </div>
+            <input id="account-image-input" class="account-image-input" type="file" accept="image/jpeg,image/png" hidden />
+            <button id="account-image-select" class="account-upload-btn" type="button">Select Image</button>
+            <div class="account-upload-meta">
+              <span>File size: maximum 1 MB</span>
+              <span>File extension: .JPEG, .PNG</span>
+            </div>
+          </aside>
+        </form>
+
+        <section id="account-purchases" class="account-purchases" aria-label="My purchases" hidden></section>
+
+        <section id="account-addresses" class="account-purchases" aria-label="Saved addresses" hidden>
+          <div id="account-address-list" class="account-address-list" aria-live="polite"></div>
+          <form id="account-address-form" class="account-address-form" novalidate>
+            <h2 id="account-address-form-title">Add an address</h2>
+            <input id="address-id" name="id" type="hidden" />
+            <div class="account-profile-fields">
+              <div class="account-field-row">
+                <label for="address-label">Address label</label>
+                <input id="address-label" name="label" value="Home" maxlength="40" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-recipient">Recipient name</label>
+                <input id="address-recipient" name="recipient" autocomplete="name" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-phone">Phone number</label>
+                <input id="address-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-street">Street address</label>
+                <input id="address-street" name="street" autocomplete="street-address" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-city">City</label>
+                <input id="address-city" name="city" autocomplete="address-level2" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-postal">Postal code</label>
+                <input id="address-postal" name="postalCode" autocomplete="postal-code" required />
+              </div>
+              <div class="account-field-row">
+                <label for="address-country">Country</label>
+                <input id="address-country" name="country" value="Philippines" autocomplete="country-name" required />
+              </div>
+            </div>
+            <label class="account-default-address"><input id="address-default" name="isDefault" type="checkbox" checked /> Set as default address</label>
+            <button class="account-save-btn" type="submit">Save address</button>
+            <p id="account-address-status" class="account-profile-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section id="account-password" class="account-purchases" aria-label="Change password" hidden>
+          <form id="account-password-form" class="account-address-form" novalidate>
+            <h2>Change password</h2>
+            <div class="account-profile-fields">
+              <div class="account-field-row">
+                <label for="current-password">Current password</label>
+                <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required />
+              </div>
+              <div class="account-field-row">
+                <label for="new-password">New password</label>
+                <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+              <div class="account-field-row">
+                <label for="confirm-new-password">Confirm new password</label>
+                <input id="confirm-new-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+            </div>
+            <button class="account-save-btn" type="submit">Update password</button>
+            <p id="account-password-status" class="account-profile-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section id="account-static-view" class="account-purchases" aria-live="polite" hidden>
+          <div class="account-orders-empty">
+            <h2 id="account-static-title"></h2>
+            <p id="account-static-message"></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script type="module" src="firebase-auth.js?v=3"></script>
+    <script src="script.js?v=28"></script>
+  </body>
+</html>

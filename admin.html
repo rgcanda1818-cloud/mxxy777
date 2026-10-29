@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Northgate | Store management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=13" />
+  </head>
+  <body class="account-page-body admin-page-body" data-dashboard-role="admin">
+    <main class="account-page-shell admin-page-shell">
+      <section class="account-page-main">
+        <header class="account-page-header">
+          <div>
+            <p class="eyebrow">NORTHGATE ADMIN</p>
+            <h1>Store management</h1>
+            <p>Monitor products, orders, and registered accounts in one place.</p>
+          </div>
+          <nav class="admin-page-nav" aria-label="Admin navigation">
+            <a class="secondary-btn" href="account.html">My account</a>
+            <button id="admin-signout" class="account-signout-btn" type="button">Sign out</button>
+          </nav>
+        </header>
+        <nav class="admin-tabs" aria-label="Store management sections">
+          <button type="button" class="active" data-admin-tab="products" aria-pressed="true">Products</button>
+          <button type="button" data-admin-tab="orders" aria-pressed="false">Orders</button>
+          <button type="button" data-admin-tab="users" aria-pressed="false">Users</button>
+        </nav>
+        <section id="admin-products" class="admin-products-panel" aria-label="Product management">
+          <div class="admin-products-heading">
+            <div>
+              <p class="eyebrow">CATALOG MANAGEMENT</p>
+              <h2>Products &amp; inventory</h2>
+              <p>Keep listings, pricing, and stock levels up to date.</p>
+            </div>
+            <button type="button" id="admin-product-add" class="primary-btn">Add product</button>
+          </div>
+          <nav class="admin-product-status-tabs" aria-label="Filter products by status">
+            <button type="button" class="active" data-product-status-tab="all" aria-pressed="true">All products <span data-product-status-count="all">0</span></button>
+            <button type="button" data-product-status-tab="active" aria-pressed="false">Active <span data-product-status-count="active">0</span></button>
+            <button type="button" data-product-status-tab="draft" aria-pressed="false">Drafts <span data-product-status-count="draft">0</span></button>
+            <button type="button" data-product-status-tab="archived" aria-pressed="false">Archived <span data-product-status-count="archived">0</span></button>
+          </nav>
+          <div class="admin-products-toolbar">
+            <div class="admin-product-filters">
+              <label class="admin-product-sort">
+                Sort by
+                <select id="admin-product-sort">
+                  <option value="updated">Recently updated</option>
+                  <option value="name">Name</option>
+                  <option value="price">Price</option>
+                  <option value="stock">Stock</option>
+                  <option value="created">Date added</option>
+                </select>
+              </label>
+              <label class="admin-product-search">
+                Search
+                <input id="admin-product-search" type="search" placeholder="Name, category, or SKU" />
+              </label>
+            </div>
+          </div>
+          <form id="admin-product-bulk" class="admin-product-bulk">
+            <label class="admin-select-all"><input id="admin-product-select-all" type="checkbox" /> Select page</label>
+            <label>
+              Bulk action
+              <select name="action" required>
+                <option value="">Choose action</option>
+                <option value="archive">Archive selected</option>
+                <option value="status">Set status</option>
+                <option value="category">Change category</option>
+                <option value="stock">Set variant stock</option>
+              </select>
+            </label>
+            <select name="value" aria-label="Bulk action value" hidden>
+              <option value="">Choose a value</option>
+              <option value="active">Active</option>
+              <option value="draft">Draft</option>
+              <option value="archived">Archived</option>
+              <option value="Home essentials">Home essentials</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Kitchen">Kitchen</option>
+              <option value="Office">Office</option>
+              <option value="Fitness">Fitness</option>
+            </select>
+            <label id="admin-product-stock-bulk-field" hidden>
+              <span class="sr-only">Stock for all selected variants</span>
+              <input name="stockValue" type="number" min="0" max="1000000" step="1" value="0" hidden />
+            </label>
+            <button class="secondary-btn" type="submit">Apply</button>
+          </form>
+          <p id="admin-products-status" class="admin-product-count" aria-live="polite"></p>
+          <p id="admin-products-feedback" class="account-state" role="status" aria-live="polite"></p>
+          <div id="admin-product-list" class="admin-product-list" aria-live="polite">
+            <div class="account-state account-state-loading" role="status">Loading products...</div>
+          </div>
+          <nav id="admin-product-pagination" class="admin-product-pagination" aria-label="Product pages"></nav>
+          <form id="admin-product-form" class="admin-product-form" hidden>
+            <input name="id" type="hidden" />
+            <header>
+              <div>
+                <p class="eyebrow">PRODUCT LISTING</p>
+                <h2 id="admin-product-form-title">Add product</h2>
+              </div>
+              <button type="button" class="account-signout-btn" data-product-form-close>Close</button>
+            </header>
+            <div class="admin-product-form-grid">
+              <label>Product name<input name="name" maxlength="120" required /></label>
+              <label>Category
+                <select name="category" required>
+                  <option>Home essentials</option><option>Electronics</option><option>Fashion</option>
+                  <option>Beauty</option><option>Kitchen</option><option>Office</option><option>Fitness</option>
+                </select>
+              </label>
+              <label>Price ($)<input name="price" type="number" min="0.01" max="1000000" step="0.01" required /></label>
+              <label>Status
+                <select name="status" required>
+                  <option value="draft">Draft</option><option value="active">Active</option><option value="archived">Archived</option>
+                </select>
+              </label>
+              <label>Low-stock alert threshold<input name="lowStockThreshold" type="number" min="0" max="1000000" step="1" value="5" required /></label>
+              <label>Stock (when there are no variants)
+                <input name="stock" type="number" min="0" max="1000000" step="1" value="0" />
+                <small>Leave blank to keep stock untracked. Variant stock is managed per size/color.</small>
+              </label>
+              <label class="admin-product-description">Description<textarea name="description" rows="4" maxlength="4000"></textarea></label>
+              <label class="admin-product-photos">Product photos
+                <input name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple />
+                <small>Upload up to 5 JPEG, PNG, or WebP images (250 KB each), or enter image URLs below. The first photo is the main image.</small>
+                <textarea name="imageUrls" rows="3" placeholder="HTTPS image URLs or existing photo IDs, one per line"></textarea>
+              </label>
+            </div>
+            <section class="admin-variants-editor" aria-labelledby="admin-variants-title">
+              <header>
+                <div><h3 id="admin-variants-title">Size, color &amp; stock</h3><p>Optional. Add a row per size/color combination; each SKU has its own stock.</p></div>
+                <button type="button" class="secondary-btn" data-variant-action="add">Add variant</button>
+              </header>
+              <div id="admin-variant-rows"></div>
+            </section>
+            <p id="admin-product-form-status" class="account-state" role="alert"></p>
+            <div class="admin-product-form-actions">
+              <button type="submit" class="primary-btn">Save product</button>
+              <button type="button" class="secondary-btn" data-product-form-close>Cancel</button>
+            </div>
+          </form>
+        </section>
+        <section id="admin-orders" class="account-purchases" aria-label="All store orders" aria-live="polite" hidden>
+          <div class="account-state account-state-loading" role="status">Loading orders...</div>
+        </section>
+        <section id="admin-users" class="admin-users-panel" aria-label="Registered users" aria-live="polite" hidden>
+          <div class="admin-users-toolbar">
+            <div class="admin-users-heading">
+              <p class="eyebrow">ACCOUNT DIRECTORY</p>
+              <h2>Registered users</h2>
+              <p>Search account details and check each user’s access and email verification.</p>
+            </div>
+            <button type="button" class="secondary-btn admin-users-refresh" data-admin-users-refresh>Refresh list</button>
+          </div>
+          <div class="admin-user-summary" aria-label="User account summary">
+            <article class="admin-user-stat">
+              <span class="admin-user-stat-icon" aria-hidden="true">◎</span>
+              <div><span>Total accounts</span><strong id="admin-users-total">—</strong></div>
+            </article>
+            <article class="admin-user-stat">
+              <span class="admin-user-stat-icon" aria-hidden="true">◉</span>
+              <div><span>Customers</span><strong id="admin-users-customers">—</strong></div>
+            </article>
+            <article class="admin-user-stat">
+              <span class="admin-user-stat-icon" aria-hidden="true">◇</span>
+              <div><span>Sellers</span><strong id="admin-users-sellers">—</strong></div>
+            </article>
+            <article class="admin-user-stat">
+              <span class="admin-user-stat-icon" aria-hidden="true">✓</span>
+              <div><span>Verified emails</span><strong id="admin-users-verified">—</strong></div>
+            </article>
+          </div>
+          <div class="admin-users-list-heading">
+            <div>
+              <h3>All accounts</h3>
+              <p id="admin-users-status" aria-live="polite">Select Users to view registered accounts.</p>
+            </div>
+            <div class="admin-user-filters">
+              <label class="admin-user-search">
+                <span class="sr-only">Search accounts</span>
+                <span aria-hidden="true">⌕</span>
+                <input id="admin-user-search" type="search" placeholder="Search name or email" />
+              </label>
+              <label class="sr-only" for="admin-user-role-filter">Filter by role</label>
+              <select id="admin-user-role-filter" aria-label="Filter users by role">
+                <option value="all">All roles</option>
+                <option value="customer">Customers</option>
+                <option value="seller">Sellers</option>
+                <option value="admin">Admins</option>
+              </select>
+            </div>
+          </div>
+          <div id="admin-user-list" class="admin-user-table-wrap" aria-live="polite">
+            <div class="account-state account-state-loading" role="status">Select Users to load registered accounts.</div>
+          </div>
+        </section>
+        <p id="admin-access-message" class="account-state account-state-error" role="alert" hidden></p>
+      </section>
+    </main>
+    <script src="script.js?v=23"></script>
+  </body>
+</html>

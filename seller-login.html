@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Northgate | Seller sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=6" />
+  </head>
+  <body data-login-role="seller">
+    <main class="modal-backdrop login-backdrop show">
+      <section class="login-dialog" aria-labelledby="role-login-title">
+        <aside class="login-side">
+          <a class="login-brand" href="index.html"><span class="login-emblem" aria-hidden="true">✦</span>Northgate</a>
+          <div class="login-side-copy">
+            <p>SELLER ACCESS</p>
+            <h2>Your shop, your products.</h2>
+          </div>
+          <span class="login-side-star" aria-hidden="true">✦</span>
+        </aside>
+        <div class="login-main">
+          <p class="login-eyebrow">NORTHGATE SELLER</p>
+          <h1 id="role-login-title">Seller sign in</h1>
+          <p class="login-intro">Sign in with your seller account to manage your own products and stock.</p>
+          <form id="role-login-form" class="auth-form">
+            <label for="role-login-email">Email address</label>
+            <input id="role-login-email" name="email" type="email" autocomplete="username" placeholder="seller@example.com" required />
+            <label for="role-login-password">Password</label>
+            <input id="role-login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+            <button class="login-submit" type="submit">
+              <span class="login-submit-text">Sign in as seller</span>
+              <span class="login-submit-icon" aria-hidden="true">→</span>
+            </button>
+            <p id="role-login-status" class="login-status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="login-demo-note">New to selling on Northgate? <a href="seller-register.html">Create a seller account</a>.</p>
+          <p class="login-demo-note">Need administrator access? <a href="admin-login.html">Admin sign in</a>.</p>
+          <p class="login-demo-note"><a href="index.html">Return to the shop</a></p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js?v=12"></script>
+  </body>
+</html>
